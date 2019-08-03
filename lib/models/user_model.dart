@@ -10,7 +10,9 @@ class UserModel extends Model{
   FirebaseUser firebaseUser;
 
   bool isLoading = false;
-
+  //para acessar usermodel de qualquer lugar do app
+  static UserModel of(BuildContext context) =>
+      ScopedModel.of<UserModel>(context);
 
   @override
   void addListener(VoidCallback listener) {
